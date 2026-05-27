@@ -11,6 +11,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "chai": "^6.2.2",
+    "chai-as-promised": "^8.0.2",
     "ganache-cli": "^6.12.2",
     "mocha": "^11.7.6",
     "web3": "^4.16.0"
