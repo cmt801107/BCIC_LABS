@@ -11,6 +11,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "mocha": "^11.7.6"
+    "ganache-cli": "^6.12.2",
+    "mocha": "^11.7.6",
+    "web3": "^4.16.0"
   }
 }
