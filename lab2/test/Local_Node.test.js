@@ -2,25 +2,17 @@ const assert = require("assert")
 const { Web3 } = require("web3")
 const ganache = require("ganache-cli")
 const web3 = new Web3(ganache.provider())
-it("檢查", () => {
-    //    console.log("assert=",assert)
-    //    console.log("web3=",Web3)
-    //    console.log("ganache-cli=",ganache)
-    //    console.log("web3=", web3)
-})
-beforeEach(() => {
-    console.log("web3 取得帳號")
-    web3.eth.getAccounts().then(result => {
-        console.log("result type=", typeof result, Array.isArray(result))
-        console.log("result=",result)
-    }).catch(ex => {
-        console.log(ex)
-    })
-    console.log("web3 return")
 
+let accounts;
+beforeEach(async () => {
+    console.log("web3 取得帳號")
+    accounts = await web3.eth.getAccounts();
 })
 describe("檢視合約", () => {
-    it("合約是有被部署的", () => {
-        console.log("我們要測合約了")
+    it("合約是有被部署的, 可以取得帳號", () => {
+        console.log("accounts=", accounts)
+    })
+    it("另一個smart contract的測試, 也可以取得帳號", () => {
+        console.log("accounts=", accounts)
     })
 })
