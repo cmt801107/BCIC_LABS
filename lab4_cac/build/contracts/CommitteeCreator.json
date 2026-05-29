@@ -1,0 +1,1033 @@
+{
+  "contractName": "CommitteeCreator",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "deployedCommittee",
+      "outputs": [
+        {
+          "internalType": "contract CAC",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "minimumFund",
+          "type": "uint256"
+        }
+      ],
+      "name": "createCommittee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDeployedCommittee",
+      "outputs": [
+        {
+          "internalType": "contract CAC[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"minimumFund\",\"type\":\"uint256\"}],\"name\":\"createCommittee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"deployedCommittee\",\"outputs\":[{\"internalType\":\"contract CAC\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getDeployedCommittee\",\"outputs\":[{\"internalType\":\"contract CAC[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CommitteeCreator.sol\":\"CommitteeCreator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CAC.sol\":{\"keccak256\":\"0x910b59473dd79697f1bcedf625b1dd261d4f5724e3fcad65bb3677b2c354dc1f\",\"urls\":[\"bzz-raw://9e33299a2a275c0753fe65ddc6cac0212c907e47181dbdb3d0443261890af7f3\",\"dweb:/ipfs/QmXYWEpYkk6XuQ3nh5MWZxdUXqF7uQfMFbnbhWHKT1q1Xx\"]},\"project:/contracts/CommitteeCreator.sol\":{\"keccak256\":\"0xecf24086ae81f38ee4e0eaf17fe214b38c7f73d7cc92bd63d2b5f6921b437f8b\",\"urls\":[\"bzz-raw://76155b371521a2fe56cec62cfb91cb0fb3dbf2d4e0dcc94847af5869bdeeeefe\",\"dweb:/ipfs/Qmf2SriTBonoqTdtb3fYdBMsbG8steTTeSSMBysAtHc8D2\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610ec5806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80630b14830b14610046578063c733413e146100b4578063f6faedba14610113575b600080fd5b6100726004803603602081101561005c57600080fd5b8101908080359060200190929190505050610141565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100bc61017d565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100ff5780820151818401526020810190506100e4565b505050509050019250505060405180910390f35b61013f6004803603602081101561012957600080fd5b810190808035906020019092919050505061020b565b005b6000818154811061014e57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6060600080548060200260200160405190810160405280929190818152602001828054801561020157602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116101b7575b5050505050905090565b6000813360405161021b906102e1565b808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050604051809103906000f080158015610274573d6000803e3d6000fd5b50905060008190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b610ba2806102ef8339019056fe608060405234801561001057600080fd5b50604051610ba2380380610ba28339818101604052604081101561003357600080fd5b81019080805190602001909291908051906020019092919050505080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550816002819055505050610afb806100a76000396000f3fe6080604052600436106100865760003560e01c806381d12c581161005957806381d12c58146101b157806382fde093146102b15780638a9cfd55146102dc5780639eedaf2e146103ce578063b688a3631461040957610086565b80630a1443911461008b578063481c6a75146100f457806366b30f061461014b5780636e417c6914610176575b600080fd5b34801561009757600080fd5b506100da600480360360208110156100ae57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610413565b604051808215151515815260200191505060405180910390f35b34801561010057600080fd5b50610109610433565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561015757600080fd5b50610160610459565b6040518082815260200191505060405180910390f35b34801561018257600080fd5b506101af6004803603602081101561019957600080fd5b810190808035906020019092919050505061045f565b005b3480156101bd57600080fd5b506101ea600480360360208110156101d457600080fd5b810190808035906020019092919050505061059f565b60405180806020018681526020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184151515158152602001838152602001828103825287818151815260200191508051906020019080838360005b83811015610272578082015181840152602081019050610257565b50505050905090810190601f16801561029f5780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b3480156102bd57600080fd5b506102c66106a7565b6040518082815260200191505060405180910390f35b3480156102e857600080fd5b506103cc600480360360608110156102ff57600080fd5b810190808035906020019064010000000081111561031c57600080fd5b82018360208201111561032e57600080fd5b8035906020019184600183028401116401000000008311171561035057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106ad565b005b3480156103da57600080fd5b50610407600480360360208110156103f157600080fd5b8101908080359060200190929190505050610821565b005b610411610960565b005b60036020528060005260406000206000915054906101000a900460ff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60025481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104b957600080fd5b60008082815481106104c757fe5b906000526020600020906005020190508060020160149054906101000a900460ff16156104f357600080fd5b6002600454816104ff57fe5b0481600301541161050f57600080fd5b8060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc82600101549081150290604051600060405180830381858888f1935050505015801561057d573d6000803e3d6000fd5b5060018160020160146101000a81548160ff0219169083151502179055505050565b600081815481106105ac57fe5b9060005260206000209060050201600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106585780601f1061062d57610100808354040283529160200191610658565b820191906000526020600020905b81548152906001019060200180831161063b57829003601f168201915b5050505050908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160149054906101000a900460ff16908060030154905085565b60045481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461070757600080fd5b61070f6109da565b6040518060a001604052808581526020018481526020018373ffffffffffffffffffffffffffffffffffffffff1681526020016000151581526020016000815250905060008190806001815401808255809150509060018203906000526020600020906005020160009091929091909150600082015181600001908051906020019061079c929190610a21565b506020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060608201518160020160146101000a81548160ff0219169083151502179055506080820151816003015550505050505050565b600080828154811061082f57fe5b90600052602060002090600502019050600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1661089557600080fd5b8060040160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16156108ee57600080fd5b806003016000815480929190600101919050555060018160040160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600254341161096e57600080fd5b6001600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550600460008154809291906001019190505550565b6040518060a001604052806060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600015158152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a6257805160ff1916838001178555610a90565b82800160010185558215610a90579182015b82811115610a8f578251825591602001919060010190610a74565b5b509050610a9d9190610aa1565b5090565b610ac391905b80821115610abf576000816000905550600101610aa7565b5090565b9056fea265627a7a72315820fea4e3776e9966636b599b2b5fa01b7b16e141ba23d5d869960f0366b93233eb64736f6c63430005100032a265627a7a7231582023e8f7b5339607518773ce8dc14e63c08c0239834c5c6c957b29efb2d5db645464736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80630b14830b14610046578063c733413e146100b4578063f6faedba14610113575b600080fd5b6100726004803603602081101561005c57600080fd5b8101908080359060200190929190505050610141565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100bc61017d565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100ff5780820151818401526020810190506100e4565b505050509050019250505060405180910390f35b61013f6004803603602081101561012957600080fd5b810190808035906020019092919050505061020b565b005b6000818154811061014e57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6060600080548060200260200160405190810160405280929190818152602001828054801561020157602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116101b7575b5050505050905090565b6000813360405161021b906102e1565b808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050604051809103906000f080158015610274573d6000803e3d6000fd5b50905060008190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b610ba2806102ef8339019056fe608060405234801561001057600080fd5b50604051610ba2380380610ba28339818101604052604081101561003357600080fd5b81019080805190602001909291908051906020019092919050505080600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550816002819055505050610afb806100a76000396000f3fe6080604052600436106100865760003560e01c806381d12c581161005957806381d12c58146101b157806382fde093146102b15780638a9cfd55146102dc5780639eedaf2e146103ce578063b688a3631461040957610086565b80630a1443911461008b578063481c6a75146100f457806366b30f061461014b5780636e417c6914610176575b600080fd5b34801561009757600080fd5b506100da600480360360208110156100ae57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610413565b604051808215151515815260200191505060405180910390f35b34801561010057600080fd5b50610109610433565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561015757600080fd5b50610160610459565b6040518082815260200191505060405180910390f35b34801561018257600080fd5b506101af6004803603602081101561019957600080fd5b810190808035906020019092919050505061045f565b005b3480156101bd57600080fd5b506101ea600480360360208110156101d457600080fd5b810190808035906020019092919050505061059f565b60405180806020018681526020018573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184151515158152602001838152602001828103825287818151815260200191508051906020019080838360005b83811015610272578082015181840152602081019050610257565b50505050905090810190601f16801561029f5780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b3480156102bd57600080fd5b506102c66106a7565b6040518082815260200191505060405180910390f35b3480156102e857600080fd5b506103cc600480360360608110156102ff57600080fd5b810190808035906020019064010000000081111561031c57600080fd5b82018360208201111561032e57600080fd5b8035906020019184600183028401116401000000008311171561035057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106ad565b005b3480156103da57600080fd5b50610407600480360360208110156103f157600080fd5b8101908080359060200190929190505050610821565b005b610411610960565b005b60036020528060005260406000206000915054906101000a900460ff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60025481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104b957600080fd5b60008082815481106104c757fe5b906000526020600020906005020190508060020160149054906101000a900460ff16156104f357600080fd5b6002600454816104ff57fe5b0481600301541161050f57600080fd5b8060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc82600101549081150290604051600060405180830381858888f1935050505015801561057d573d6000803e3d6000fd5b5060018160020160146101000a81548160ff0219169083151502179055505050565b600081815481106105ac57fe5b9060005260206000209060050201600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106585780601f1061062d57610100808354040283529160200191610658565b820191906000526020600020905b81548152906001019060200180831161063b57829003601f168201915b5050505050908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160149054906101000a900460ff16908060030154905085565b60045481565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461070757600080fd5b61070f6109da565b6040518060a001604052808581526020018481526020018373ffffffffffffffffffffffffffffffffffffffff1681526020016000151581526020016000815250905060008190806001815401808255809150509060018203906000526020600020906005020160009091929091909150600082015181600001908051906020019061079c929190610a21565b506020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060608201518160020160146101000a81548160ff0219169083151502179055506080820151816003015550505050505050565b600080828154811061082f57fe5b90600052602060002090600502019050600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1661089557600080fd5b8060040160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16156108ee57600080fd5b806003016000815480929190600101919050555060018160040160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600254341161096e57600080fd5b6001600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550600460008154809291906001019190505550565b6040518060a001604052806060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600015158152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610a6257805160ff1916838001178555610a90565b82800160010185558215610a90579182015b82811115610a8f578251825591602001919060010190610a74565b5b509050610a9d9190610aa1565b5090565b610ac391905b80821115610abf576000816000905550600101610aa7565b5090565b9056fea265627a7a72315820fea4e3776e9966636b599b2b5fa01b7b16e141ba23d5d869960f0366b93233eb64736f6c63430005100032a265627a7a7231582023e8f7b5339607518773ce8dc14e63c08c0239834c5c6c957b29efb2d5db645464736f6c63430005100032",
+  "sourceMap": "49:359:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;49:359:1;;;;;;;",
+  "deployedSourceMap": "49:359:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;49:359:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;82:30;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;82:30:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;295:110;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;295:110:1;;;;;;;;;;;;;;;;;119:170;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;119:170:1;;;;;;;;;;;;;;;;;:::i;:::-;;82:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;295:110::-;348:12;380:17;373:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;295:110;:::o;119:170::-;183:16;210:11;223:10;202:32;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;202:32:1;183:51;;245:17;268:12;245:36;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;245:36:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;119:170;;:::o;49:359::-;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.16;\r\nimport \"./CAC.sol\";\r\n\r\ncontract CommitteeCreator {\r\n    CAC[] public deployedCommittee;\r\n    function createCommittee(uint256 minimumFund) public {\r\n        CAC newCommittee = new CAC(minimumFund, msg.sender);\r\n        deployedCommittee.push(newCommittee);\r\n    }\r\n    function getDeployedCommittee() public view returns (CAC[] memory) {\r\n        return deployedCommittee;\r\n    }\r\n}",
+  "sourcePath": "C:\\Users\\Admin\\Desktop\\BCIC_LABS\\lab4_cac\\contracts\\CommitteeCreator.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/CommitteeCreator.sol",
+    "exportedSymbols": {
+      "CommitteeCreator": [
+        230
+      ]
+    },
+    "id": 231,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 195,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "project:/contracts/CAC.sol",
+        "file": "./CAC.sol",
+        "id": 196,
+        "nodeType": "ImportDirective",
+        "scope": 231,
+        "sourceUnit": 194,
+        "src": "26:19:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          193
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 230,
+        "linearizedBaseContracts": [
+          230
+        ],
+        "name": "CommitteeCreator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 199,
+            "name": "deployedCommittee",
+            "nodeType": "VariableDeclaration",
+            "scope": 230,
+            "src": "82:30:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_CAC_$193_$dyn_storage",
+              "typeString": "contract CAC[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 197,
+                "name": "CAC",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 193,
+                "src": "82:3:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_CAC_$193",
+                  "typeString": "contract CAC"
+                }
+              },
+              "id": 198,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "82:5:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_CAC_$193_$dyn_storage_ptr",
+                "typeString": "contract CAC[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 219,
+              "nodeType": "Block",
+              "src": "172:117:1",
+              "statements": [
+                {
+                  "assignments": [
+                    205
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 205,
+                      "name": "newCommittee",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 219,
+                      "src": "183:16:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CAC_$193",
+                        "typeString": "contract CAC"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 204,
+                        "name": "CAC",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 193,
+                        "src": "183:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CAC_$193",
+                          "typeString": "contract CAC"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 212,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 208,
+                        "name": "minimumFund",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 201,
+                        "src": "210:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 209,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 245,
+                          "src": "223:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 210,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "223:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 207,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "202:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_address_$returns$_t_contract$_CAC_$193_$",
+                        "typeString": "function (uint256,address) returns (contract CAC)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 206,
+                        "name": "CAC",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 193,
+                        "src": "206:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CAC_$193",
+                          "typeString": "contract CAC"
+                        }
+                      }
+                    },
+                    "id": 211,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "202:32:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CAC_$193",
+                      "typeString": "contract CAC"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "183:51:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 216,
+                        "name": "newCommittee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 205,
+                        "src": "268:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CAC_$193",
+                          "typeString": "contract CAC"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_CAC_$193",
+                          "typeString": "contract CAC"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 213,
+                        "name": "deployedCommittee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 199,
+                        "src": "245:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_CAC_$193_$dyn_storage",
+                          "typeString": "contract CAC[] storage ref"
+                        }
+                      },
+                      "id": 215,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "245:22:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_CAC_$193_$returns$_t_uint256_$",
+                        "typeString": "function (contract CAC) returns (uint256)"
+                      }
+                    },
+                    "id": 217,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "245:36:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 218,
+                  "nodeType": "ExpressionStatement",
+                  "src": "245:36:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 220,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 202,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 201,
+                  "name": "minimumFund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 220,
+                  "src": "144:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 200,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "144:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "143:21:1"
+            },
+            "returnParameters": {
+              "id": 203,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "172:0:1"
+            },
+            "scope": 230,
+            "src": "119:170:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 228,
+              "nodeType": "Block",
+              "src": "362:43:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 226,
+                    "name": "deployedCommittee",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 199,
+                    "src": "380:17:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_CAC_$193_$dyn_storage",
+                      "typeString": "contract CAC[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 225,
+                  "id": 227,
+                  "nodeType": "Return",
+                  "src": "373:24:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 229,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDeployedCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 221,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "324:2:1"
+            },
+            "returnParameters": {
+              "id": 225,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 224,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 229,
+                  "src": "348:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_CAC_$193_$dyn_memory_ptr",
+                    "typeString": "contract CAC[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 222,
+                      "name": "CAC",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 193,
+                      "src": "348:3:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CAC_$193",
+                        "typeString": "contract CAC"
+                      }
+                    },
+                    "id": 223,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "348:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_CAC_$193_$dyn_storage_ptr",
+                      "typeString": "contract CAC[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:14:1"
+            },
+            "scope": 230,
+            "src": "295:110:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 231,
+        "src": "49:359:1"
+      }
+    ],
+    "src": "0:408:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/CommitteeCreator.sol",
+      "exportedSymbols": {
+        "CommitteeCreator": [
+          230
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".16"
+          ]
+        },
+        "id": 195,
+        "name": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 194,
+          "absolutePath": "project:/contracts/CAC.sol",
+          "file": "./CAC.sol",
+          "scope": 231,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 196,
+        "name": "ImportDirective",
+        "src": "26:19:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            193
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            230
+          ],
+          "name": "CommitteeCreator",
+          "scope": 231
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "deployedCommittee",
+              "scope": 230,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract CAC[]",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "contract CAC[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "CAC",
+                      "referencedDeclaration": 193,
+                      "type": "contract CAC"
+                    },
+                    "id": 197,
+                    "name": "UserDefinedTypeName",
+                    "src": "82:3:1"
+                  }
+                ],
+                "id": 198,
+                "name": "ArrayTypeName",
+                "src": "82:5:1"
+              }
+            ],
+            "id": 199,
+            "name": "VariableDeclaration",
+            "src": "82:30:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createCommittee",
+              "scope": 230,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "minimumFund",
+                      "scope": 220,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 200,
+                        "name": "ElementaryTypeName",
+                        "src": "144:7:1"
+                      }
+                    ],
+                    "id": 201,
+                    "name": "VariableDeclaration",
+                    "src": "144:19:1"
+                  }
+                ],
+                "id": 202,
+                "name": "ParameterList",
+                "src": "143:21:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 203,
+                "name": "ParameterList",
+                "src": "172:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        205
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "newCommittee",
+                          "scope": 219,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "contract CAC",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "CAC",
+                              "referencedDeclaration": 193,
+                              "type": "contract CAC"
+                            },
+                            "id": 204,
+                            "name": "UserDefinedTypeName",
+                            "src": "183:3:1"
+                          }
+                        ],
+                        "id": 205,
+                        "name": "VariableDeclaration",
+                        "src": "183:16:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "contract CAC",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "function (uint256,address) returns (contract CAC)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "contractScope": null,
+                                  "name": "CAC",
+                                  "referencedDeclaration": 193,
+                                  "type": "contract CAC"
+                                },
+                                "id": 206,
+                                "name": "UserDefinedTypeName",
+                                "src": "206:3:1"
+                              }
+                            ],
+                            "id": 207,
+                            "name": "NewExpression",
+                            "src": "202:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 201,
+                              "type": "uint256",
+                              "value": "minimumFund"
+                            },
+                            "id": 208,
+                            "name": "Identifier",
+                            "src": "210:11:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 245,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 209,
+                                "name": "Identifier",
+                                "src": "223:3:1"
+                              }
+                            ],
+                            "id": 210,
+                            "name": "MemberAccess",
+                            "src": "223:10:1"
+                          }
+                        ],
+                        "id": 211,
+                        "name": "FunctionCall",
+                        "src": "202:32:1"
+                      }
+                    ],
+                    "id": 212,
+                    "name": "VariableDeclarationStatement",
+                    "src": "183:51:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_CAC_$193",
+                                  "typeString": "contract CAC"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (contract CAC) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 199,
+                                  "type": "contract CAC[] storage ref",
+                                  "value": "deployedCommittee"
+                                },
+                                "id": 213,
+                                "name": "Identifier",
+                                "src": "245:17:1"
+                              }
+                            ],
+                            "id": 215,
+                            "name": "MemberAccess",
+                            "src": "245:22:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 205,
+                              "type": "contract CAC",
+                              "value": "newCommittee"
+                            },
+                            "id": 216,
+                            "name": "Identifier",
+                            "src": "268:12:1"
+                          }
+                        ],
+                        "id": 217,
+                        "name": "FunctionCall",
+                        "src": "245:36:1"
+                      }
+                    ],
+                    "id": 218,
+                    "name": "ExpressionStatement",
+                    "src": "245:36:1"
+                  }
+                ],
+                "id": 219,
+                "name": "Block",
+                "src": "172:117:1"
+              }
+            ],
+            "id": 220,
+            "name": "FunctionDefinition",
+            "src": "119:170:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getDeployedCommittee",
+              "scope": 230,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 221,
+                "name": "ParameterList",
+                "src": "324:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 229,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "contract CAC[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "contract CAC[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "CAC",
+                              "referencedDeclaration": 193,
+                              "type": "contract CAC"
+                            },
+                            "id": 222,
+                            "name": "UserDefinedTypeName",
+                            "src": "348:3:1"
+                          }
+                        ],
+                        "id": 223,
+                        "name": "ArrayTypeName",
+                        "src": "348:5:1"
+                      }
+                    ],
+                    "id": 224,
+                    "name": "VariableDeclaration",
+                    "src": "348:12:1"
+                  }
+                ],
+                "id": 225,
+                "name": "ParameterList",
+                "src": "347:14:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 225
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 199,
+                          "type": "contract CAC[] storage ref",
+                          "value": "deployedCommittee"
+                        },
+                        "id": 226,
+                        "name": "Identifier",
+                        "src": "380:17:1"
+                      }
+                    ],
+                    "id": 227,
+                    "name": "Return",
+                    "src": "373:24:1"
+                  }
+                ],
+                "id": 228,
+                "name": "Block",
+                "src": "362:43:1"
+              }
+            ],
+            "id": 229,
+            "name": "FunctionDefinition",
+            "src": "295:110:1"
+          }
+        ],
+        "id": 230,
+        "name": "ContractDefinition",
+        "src": "49:359:1"
+      }
+    ],
+    "id": 231,
+    "name": "SourceUnit",
+    "src": "0:408:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x90E155De796e50C81F80482897787De58aA1fCe0",
+      "transactionHash": "0x7bcb4e3b16490e14c243c0aebf4208de3954c2b8652ae56f26e8a2f841843f91"
+    }
+  },
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2026-05-29T09:05:46.563Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
