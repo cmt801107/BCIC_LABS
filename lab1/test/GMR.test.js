@@ -6,11 +6,15 @@ const assert = chai.assert
 const should = chai.should()
 
 let gmr;
-beforeEach(async () => {
-    //gmr = await GMR.deployed()
-    gmr = await GMR.new()
-})
+
 contract("測試GMR合約", (accounts) => {
+    const MANAGER_ID = 9;
+    const NON_MANAGER_ID = 3;
+    beforeEach(async () => {
+        //gmr = await GMR.deployed()
+        gmr = await GMR.new({from: accounts[MANAGER_ID]})
+    })
+
     it("取得鏈的帳戶", () => {
         console.log(`共 ${accounts.length} 個帳戶`,)
         console.log("第一個帳戶是:",accounts[0])
@@ -98,7 +102,7 @@ contract("測試GMR合約", (accounts) => {
         let value = await gmr.getBalance()
         let numberValue = value.toString()
         console.log("before payment gmr contract balance=", numberValue)
-        await gmr.payMoneyToPlayer()
+        await gmr.payMoneyToPlayer({from: accounts[MANAGER_ID]})
         value = await gmr.getBalance()
         numberValue = value.toString()
         console.log("after payment gmr contract balance=", numberValue)
@@ -116,7 +120,7 @@ contract("測試GMR合約", (accounts) => {
             value: web3.utils.toWei("0.02", "ether")
         })
         try {
-            await gmr.payMoneyToPlayer({ from: accounts[3] })
+            await gmr.payMoneyToPlayer({ from: accounts[NON_MANAGER_ID] })
             assert.fail("should not run till here...")
         } catch (e) {
             assert.isAbove(e.message.search("processing transaction")
